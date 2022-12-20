@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Signup</title>
+</head>
+<body>
+	{% for message in messages %}
+		<h1>{{message}}</h1>
+	{% endfor %}
+	<form method="POST">
+		{% csrf_token %}
+		<input type="text" name="username" placeholder="username here"><br><br>
+		<input type="text" name="email" placeholder="email here"><br><br>
+		<input type="password" name="password" placeholder="password"><br><br>
+		<input type="password" name="confirm_password" placeholder="confirm_password here"><br><br>
+		<a href="{% url 'login' %}"><button>Create Account</button></a>
+	</form>
+	<p>Already have account?<a href="{% url 'login' %}"><button>Signin</button></a></p>
+</body>
+</html>

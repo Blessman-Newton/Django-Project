@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        
+ {% for i in edit %}
+ <h3>{{i.edit}}</h3>
+ {% endfor %}
+ <h1>the value in the url is </h1>
+    <p><a href="{% url 'login' %}">Logout</a></p>
+    {{edit_pro}}
+        <p><a href="{% url 'update' %}">update</a></p>
+</body>
+</html>

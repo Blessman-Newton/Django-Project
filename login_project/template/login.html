@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	{% for message in messages %}
+     <h3 style="red">{{message}}</h3>
+    {% endfor %}
+	<form method="POST">
+		{% csrf_token%}
+		<input type="text" name="username" placeholder="Enter username" /><br>
+		<input type="password" name="password" placeholder="Enter username" /><br>
+		<a href="{% url 'index' %}"><input type="submit" value="login"/></a><br><br>
+
+			<p>Create New Account?<a href="{% url 'register' %}">Signup here</a></p>
+	</form>
+</body>
